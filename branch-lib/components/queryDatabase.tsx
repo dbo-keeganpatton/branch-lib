@@ -12,7 +12,7 @@ export default async function QueryDatabase() {
       <ul className="space-y-4">
 
         {/* Inject the result set wherever from DB */}
-        {results_array.rows.map((result) => (
+        {results_array.map((result) => (
 
           <li key={result.title}>
             <div>
