@@ -4,7 +4,7 @@ export default function TopBanner() {
 
   const inboxImage = "/mail-svgrepo-com.svg"
   const friendList = "/friends-svgrepo-com.svg"
-  const homeImage = "/home-icon-svgrepo-com.svg"
+  const homeImage = "/home-1-svgrepo-com.svg"
   const menuImage = "/menu-symbol-svgrepo-com.svg"
 
   const userName = "TODO"
@@ -25,7 +25,7 @@ export default function TopBanner() {
       <div>Hello again {userName}</div>
       {/* END TODO */}
 
-      <div className="flex justify-end gap-3">
+      <div className="flex justify-end gap-5">
         <Image
           src={homeImage}
           width={25}

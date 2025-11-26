@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div>
       <TopBanner />
-      <h1>Hello from the app</h1>
       <br />
       <QueryDatabase />
     </div>

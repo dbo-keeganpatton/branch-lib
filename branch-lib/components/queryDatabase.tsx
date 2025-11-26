@@ -1,34 +1,39 @@
 import { Pool } from "pg";
 
 export default async function QueryDatabase() {
-
   const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
-  const results = await pool.query('select * from branch_lib.branch_lib_core.dim_author_story limit 10;');
-  const results_array = results.rows
-
-  return (
-    <div>
-
-      <ul className="space-y-4">
-
-        {/* Inject the result set wherever from DB */}
-        {results_array.map((result) => (
-
-          <li key={result.title}>
-            <div>
-              <p>{result.author_id}</p>
-              <p>{result.story_id}</p>
-            </div>
-            <span>{result.created_timestamp.toISOString()}</span>
-          </li>
-
-        ))}
-
-      </ul>
-
-    </div>
+  const results = await pool.query(
+    "select title, created_timestamp from branch_lib.branch_lib_core.fact_story limit 10;"
   );
 
-};
+  const rows = results.rows;      // row data
+  const fields = results.fields;  // column metadata (names etc.)
 
+  return (
+    <div className="w-100">
+      <table>
+        <caption>Stories</caption>
+
+        <thead>
+          <tr>
+            {fields.map((field) => (
+              <th key={field.name}>{field.name}</th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>
+          {rows.map((row, idx) => (
+            <tr key={idx}>
+              {fields.map((field) => (
+                <td key={field.name}>{row[field.name]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+
+      </table>
+    </div>
+  );
+}
 
