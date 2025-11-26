@@ -1,5 +1,6 @@
 import QueryDatabase from "@/components/queryDatabase";
 import TopBanner from "@/components/topBanner";
+import SideBar from "@/components/sideBar";
 
 
 export default function Home() {
@@ -7,7 +8,10 @@ export default function Home() {
     <div>
       <TopBanner />
       <br />
-      <QueryDatabase />
+      <div className="flex justify-between items-center p-3 h-full pt-10">
+        <div className="w-md h-screen"><SideBar /></div>
+        <div><QueryDatabase /></div>
+      </div>
     </div>
   );
 }

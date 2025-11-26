@@ -6,11 +6,11 @@ export default async function QueryDatabase() {
     "select title, created_timestamp from branch_lib.branch_lib_core.fact_story limit 10;"
   );
 
-  const rows = results.rows;      // row data
-  const fields = results.fields;  // column metadata (names etc.)
+  const rows = results.rows;
+  const fields = results.fields;
 
   return (
-    <div className="w-100">
+    <div className="p-2">
       <table>
         <caption>Stories</caption>
 
