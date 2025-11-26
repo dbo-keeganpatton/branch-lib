@@ -10,7 +10,7 @@ export default function Home() {
       <br />
       <div className="flex justify-between items-center p-3 h-full pt-10">
         <div className="w-md h-screen"><SideBar /></div>
-        <div><QueryDatabase /></div>
+        <div className="h-screen"><QueryDatabase /></div>
       </div>
     </div>
   );

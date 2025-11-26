@@ -3,7 +3,7 @@ import { Pool } from "pg";
 export default async function QueryDatabase() {
   const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
   const results = await pool.query(
-    "select title, created_timestamp from branch_lib.branch_lib_core.fact_story limit 10;"
+    "select title, created_timestamp from branch_lib.branch_lib_core.fact_story order by random() limit 1;"
   );
 
   const rows = results.rows;
@@ -12,22 +12,19 @@ export default async function QueryDatabase() {
   return (
     <div className="p-2">
       <table>
-        <caption>Stories</caption>
 
         <thead>
           <tr>
-            {fields.map((field) => (
-              <th key={field.name}>{field.name}</th>
+            {rows.map((row) => (
+              <th key={row.title}>{row.title}</th>
             ))}
           </tr>
         </thead>
 
         <tbody>
-          {rows.map((row, idx) => (
-            <tr key={idx}>
-              {fields.map((field) => (
-                <td key={field.name}>{row[field.name]}</td>
-              ))}
+          {rows.map((row) => (
+            <tr>
+              <td>{row.created_timestamp}</td>
             </tr>
           ))}
         </tbody>
