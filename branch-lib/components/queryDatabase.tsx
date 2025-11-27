@@ -10,21 +10,21 @@ export default async function QueryDatabase() {
   const fields = results.fields;
 
   return (
-    <div className="p-2">
-      <table>
+    <div className="p-2 m-2 rounded-sm border border-purple-600">
+      <table className="bg-purple-400/2">
 
-        <thead>
+        <thead className="p-2">
           <tr>
             {rows.map((row) => (
-              <th key={row.title}>{row.title}</th>
+              <th key={row.title} className="p-2">{row.title}</th>
             ))}
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="p-2">
           {rows.map((row) => (
-            <tr>
-              <td>{row.created_timestamp}</td>
+            <tr key={row.title} className="p-2">
+              <td className="p-2">{row.created_timestamp}</td>
             </tr>
           ))}
         </tbody>
