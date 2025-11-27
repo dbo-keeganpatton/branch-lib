@@ -7,9 +7,8 @@ export default function Home() {
   return (
     <div>
       <TopBanner />
-      <br />
-      <div className="flex justify-between items-center p-3 h-full pt-10">
-        <div className="w-md h-screen"><SideBar /></div>
+      <div className="flex pl-2 pr-2">
+        <div className="w-sm h-screen"><SideBar /></div>
         <div className="h-screen"><QueryDatabase /></div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default async function QueryDatabase() {
   const fields = results.fields;
 
   return (
-    <div className="p-2 m-2 rounded-sm border border-purple-600">
+    <div className="p-2 ml-2 rounded-sm border border-purple-600">
       <table className="bg-purple-400/2">
 
         <thead className="p-2">
