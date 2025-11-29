@@ -6,7 +6,7 @@ import TopBanner from "./topBanner";
 
 function SideBar() {
   return (
-    <div className="flex-row bg-purple-400/10 rounded-sm h-full p-2">
+    <div className="flex-row bg-purple-400/10 rounded-sm p-2">
 
       <h1 className="text-md text-purple-500/50"> What&apos;s New? </h1>
       <br />

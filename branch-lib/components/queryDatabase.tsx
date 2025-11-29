@@ -7,13 +7,12 @@ export default async function QueryDatabase() {
   );
 
   const rows = results.rows;
-  const fields = results.fields;
 
   return (
     <div className="p-2 ml-2 rounded-sm border border-purple-600">
       <table className="bg-purple-400/2">
 
-        <thead className="p-2">
+        <thead>
           <tr>
             {rows.map((row) => (
               <th key={row.title} className="p-2">{row.title}</th>
@@ -21,7 +20,7 @@ export default async function QueryDatabase() {
           </tr>
         </thead>
 
-        <tbody className="p-2">
+        <tbody>
           {rows.map((row) => (
             <tr key={row.title} className="p-2">
               <td className="p-2">{row.created_timestamp}</td>
