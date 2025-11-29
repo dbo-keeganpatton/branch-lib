@@ -1,12 +1,16 @@
-import SidebarClient from "@/components/sideBarClient";
+import Sidebar from "@/components/sideBar";
 import QueryDatabase from "@/components/queryDatabase";
 
 export default function Home() {
   return (
     <div>
-      <SidebarClient>
+
+      {/* Top Nav Banner is inherited through the SideBar component */}
+      <Sidebar>
         <QueryDatabase />
-      </SidebarClient>
+      </Sidebar>
+
+
     </div>
   );
 }

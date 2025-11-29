@@ -1,5 +1,10 @@
-export default function SideBar() {
+"use client";
 
+import { useState } from "react";
+import TopBanner from "./topBanner";
+
+
+function SideBar() {
   return (
     <div className="flex-row bg-purple-400/10 rounded-sm h-full p-2">
 
@@ -18,5 +23,24 @@ export default function SideBar() {
 
     </div>
   )
-
 };
+
+
+
+export default function SidebarClient({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(true);
+
+  const toggleSideBar = () => setOpen(!open);
+
+  return (
+    <>
+      <TopBanner onMenuClick={toggleSideBar} />
+
+      <div className="flex pl-2 pr-2">
+        {open && <SideBar />}
+        {children}
+      </div>
+    </>
+  );
+}
+
