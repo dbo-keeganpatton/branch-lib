@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+
+
 
 export default function TopBanner({ onMenuClick }: { onMenuClick: () => void }) {
   const inboxImage = "/mail-svgrepo-com.svg";
@@ -10,9 +13,22 @@ export default function TopBanner({ onMenuClick }: { onMenuClick: () => void }) 
 
   const userName = "TODO";
 
+  // Handles the Image animation for the menu hamburger icon when 
+  // a user clicks to toggle the side bar component
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(true);
+    onMenuClick();
+    setTimeout(() => setClicked(false), 300);
+  };
+
+
   return (
+
     <div className="flex justify-between items-center p-5 m-2 bg-purple-400/10 rounded-sm">
-      <div onClick={onMenuClick} className="cursor-pointer">
+
+      {/* First Child Div applies image animation for toggling the sidebar  */}
+      <div onClick={handleClick} className={`cursor-pointer ${clicked ? "animate-spin" : ""}`}>
         <Image src={menuImage} width={25} height={25} alt="menu button" />
       </div>
 
