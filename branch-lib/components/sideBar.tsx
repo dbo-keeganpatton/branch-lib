@@ -40,7 +40,14 @@ export default function SidebarClient({ children }: { children: React.ReactNode 
       <TopBanner onMenuClick={() => setOpen(!open)} />
 
       <div className="flex pl-2 pr-2">
-        <div className="overflow-hidden w-md"> <SideBar open={open} /> </div>
+        <div
+          className={`overflow-hidden transition-all duration-300
+              ${open ? "w-md" : "w-0"}
+            `}
+        >
+          <SideBar open={open} />
+
+        </div>
         {children}
       </div>
     </>
