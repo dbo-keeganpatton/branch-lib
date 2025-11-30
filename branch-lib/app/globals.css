@@ -24,3 +24,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Quill Editor Style */
+
+.ql-toolbar {
+  background: #9333ea1a !important;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid #ccc !important;
+  padding: 6px !important;
+}
+
+/* Buttons when idle */
+.ql-toolbar button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+/* Buttons when hovered */
+.ql-toolbar button:hover {
+  background: #9333ea;
+}
+
+/* Buttons when active / selected */
+.ql-toolbar button.ql-active {
+  background: #000000 !important;
+}
+
+.ql-toolbar .ql-picker {
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.ql-toolbar .ql-picker-label {
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.ql-toolbar .ql-picker-label:hover {
+  background: #e0e0e0;
+}
+
+.ql-toolbar .ql-picker-options {
+  background: white !important;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
+}
+
+/* END Quill Editor Style */

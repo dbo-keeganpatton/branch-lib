@@ -9,7 +9,6 @@ export default function RichTextEditor() {
   const [value, setValue] = useState("");
 
   useEffect(() => {
-    // Prevent running twice in React Strict Mode
     if (quillRef.current) return;
 
     async function loadQuill() {
