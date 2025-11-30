@@ -4,10 +4,15 @@ import { useState } from "react";
 import TopBanner from "./topBanner";
 
 
-function SideBar() {
+function SideBar({ open }: { open: boolean }) {
   return (
-    <div className="flex-row bg-purple-400/10 rounded-sm p-2">
-
+    <div
+      className={`
+        flex-row bg-purple-400/10 rounded-sm p-2
+        transition-transform duration-300
+        ${open ? "translate-x-0" : "-translate-x-full"}
+      `}
+    >
       <h1 className="text-md text-purple-500/50"> What&apos;s New? </h1>
       <br />
 
@@ -30,17 +35,14 @@ function SideBar() {
 export default function SidebarClient({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(true);
 
-  const toggleSideBar = () => setOpen(!open);
-
   return (
     <>
-      <TopBanner onMenuClick={toggleSideBar} />
+      <TopBanner onMenuClick={() => setOpen(!open)} />
 
       <div className="flex pl-2 pr-2">
-        {open && <SideBar />}
+        <SideBar open={open} />
         {children}
       </div>
     </>
   );
 }
-
