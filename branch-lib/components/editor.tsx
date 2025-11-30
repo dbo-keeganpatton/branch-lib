@@ -34,7 +34,7 @@ export default function RichTextEditor() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div>
       <div
         ref={editorRef}
         style={{ height: "300px" }}
