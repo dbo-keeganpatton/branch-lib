@@ -9,7 +9,7 @@ function SideBar({ open }: { open: boolean }) {
     <div
       className={`
         flex-row bg-purple-400/10 rounded-sm p-2
-        transition-transform duration-200 h-full 
+        transition-transform duration-300 h-full 
         ${open ? "translate-x-0" : "-translate-x-full"}
       `}
     >
@@ -41,7 +41,7 @@ export default function SidebarClient({ children }: { children: React.ReactNode 
 
       <div className="flex pl-2 pr-2">
         <div
-          className={`overflow-hidden transition-all duration-300
+          className={`overflow-hidden transition-transform duration-300
               ${open ? "w-md" : "w-0"}
             `}
         >
