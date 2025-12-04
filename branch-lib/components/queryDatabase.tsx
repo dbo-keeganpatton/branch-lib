@@ -9,7 +9,7 @@ export default async function QueryDatabase() {
   const rows = results.rows;
 
   return (
-    <div className="p-2 ml-2 mr-2 rounded-sm border border-purple-600">
+    <div className="p-2 ml-2 mr-2 rounded-sm border border-purple-900/50">
       <table className="bg-purple-400/2">
 
         <thead>
