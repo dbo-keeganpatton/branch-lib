@@ -37,9 +37,9 @@ export default function TopBanner({ onMenuClick }: { onMenuClick: () => void }) 
       <div>Hello again {userName}</div>
 
       <div className="flex justify-end gap-5">
-        <Image src={homeImage} width={25} height={25} alt="home" />
-        <Image src={inboxImage} width={25} height={25} alt="inbox" />
-        <Image src={friendList} width={25} height={25} alt="friends" />
+        <div className="transition-transform duration-200 hover:scale-120"><Image src={homeImage} width={25} height={25} alt="home" /></div>
+        <div className="transition-transform duration-200 hover:scale-120"><Image src={inboxImage} width={25} height={25} alt="inbox" /></div>
+        <div className="transition-transform duration-200 hover:scale-120"><Image src={friendList} width={25} height={25} alt="friends" /></div>
       </div>
     </div>
   );
